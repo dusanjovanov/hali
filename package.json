@@ -33,7 +33,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "micro-state",
+  "name": "@duca/micro-state",
   "author": "Dusan Jovanov",
   "module": "dist/micro-state.esm.js",
   "size-limit": [
