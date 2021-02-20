@@ -23,6 +23,12 @@ const minus = () => {
 };
 
 const App = () => {
+  // React.useEffect(() => {
+  //   setInterval(() => {
+  //     plus();
+  //   }, 200);
+  // }, []);
+
   return (
     <div>
       <Counter />
