@@ -3,6 +3,8 @@
 Tiny global state management for React
 
 [![npm](https://badge.fury.io/js/hali.svg)](https://www.npmjs.com/package/hali)
+![packagesize](https://badgen.net/bundlephobia/minzip/hali)
+![treeshaking](https://badgen.net/bundlephobia/tree-shaking/hali)
 
 ### Install
 
