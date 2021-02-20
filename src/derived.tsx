@@ -1,15 +1,17 @@
 import EventEmitter from 'eventemitter3';
 import { ValueWrapper } from './types';
 
-export function derived<Value = any, DerivedValue = any>(
-  value: ValueWrapper<Value>,
-  fn: (value: Value) => DerivedValue
+export function derived<DerivedValue = any>(
+  values: ValueWrapper<any>[],
+  fn: () => DerivedValue
 ) {
-  let _v = fn(value.value);
+  let _v = fn();
   const emitter = new EventEmitter();
-  value.emitter.on('update', (v: any) => {
-    _v = fn(v);
-    emitter.emit('update', _v);
+  values.forEach(v => {
+    v.emitter.on('update', () => {
+      _v = fn();
+      emitter.emit('update', _v);
+    });
   });
   return {
     get value() {

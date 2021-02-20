@@ -1,8 +1,7 @@
 import { ValueWrapper } from './types';
 
-export function effect<Value = any>(
-  value: ValueWrapper<Value>,
-  fn: (value: Value) => void
-) {
-  value.emitter.on('update', fn);
+export function effect(values: ValueWrapper<any>[], fn: () => void) {
+  values.forEach(v => {
+    v.emitter.on('update', fn);
+  });
 }

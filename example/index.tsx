@@ -5,11 +5,14 @@ import { derived, effect, useValue, value } from '../.';
 
 const countValue = value(1);
 
-effect(countValue, (v: any) => console.log(countValue.value));
+effect([countValue], () => console.log(countValue.value));
 
-const doubleCountValue = derived(countValue, (v: any) => v * 2);
+const doubleCountValue = derived([countValue], () => countValue.value * 2);
 
-const doubleDoubleCountValue = derived(doubleCountValue, (v: any) => v * 2);
+const doubleDoubleCountValue = derived(
+  [doubleCountValue],
+  () => doubleCountValue.value * 2
+);
 
 const plus = () => {
   countValue.value++;
