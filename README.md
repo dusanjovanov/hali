@@ -39,7 +39,7 @@ const App = () => {
       <div>
       <button onClick={plus}>+</button>
       Count: {count}
-      <button onClick={minus}>+</button>
+      <button onClick={minus}>-</button>
       </div>
       Double count: {doubleCount}
     </div>
