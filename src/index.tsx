@@ -1,6 +1,6 @@
-import * as React from 'react';
+import { value } from './value';
+import { derived } from './derived';
+import { useValue } from './useValue';
+import { effect } from './effect';
 
-// Delete me
-export const Thing = () => {
-  return <div>the snozzberries taste like snozzberries</div>;
-};
+export { value, derived, useValue, effect };
