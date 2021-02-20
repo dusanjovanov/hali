@@ -1,5 +1,5 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.4",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -36,6 +36,9 @@
   "name": "hali",
   "author": "Dusan Jovanov",
   "module": "dist/micro-state.esm.js",
+  "repository": {
+    "url": "https://github.com/dusanjovanov/hali"
+  },
   "size-limit": [
     {
       "path": "dist/micro-state.cjs.production.min.js",
