@@ -6,7 +6,7 @@ export const useValue = (value: any) => {
     const l = () => setState(Date.now());
     value.emitter.on('update', l);
     return () => {
-      value.emitter.removeListener(l);
+      value.emitter.off('update', l);
     };
   }, []);
   return value.value;

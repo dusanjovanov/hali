@@ -1,4 +1,4 @@
-import EventEmitter from 'eventemitter3';
+import mitt from 'mitt';
 import { ValueWrapper } from './types';
 
 export function derived<DerivedValue = any>(
@@ -6,7 +6,7 @@ export function derived<DerivedValue = any>(
   fn: () => DerivedValue
 ) {
   let _v = fn();
-  const emitter = new EventEmitter();
+  const emitter = mitt();
   values.forEach(v => {
     v.emitter.on('update', () => {
       _v = fn();

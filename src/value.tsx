@@ -1,8 +1,8 @@
-import EventEmitter from 'eventemitter3';
+import mitt from 'mitt';
 
 export function value<Value = any>(v: Value) {
   let _v = v;
-  const emitter = new EventEmitter();
+  const emitter = mitt();
   return {
     get value() {
       return _v;

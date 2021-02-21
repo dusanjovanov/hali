@@ -1,6 +1,6 @@
-import EventEmitter from 'eventemitter3';
+import { Emitter } from 'mitt';
 
 export type ValueWrapper<Value = any> = {
   value: Value;
-  emitter: EventEmitter<string | symbol, any>;
+  emitter: Emitter;
 };
